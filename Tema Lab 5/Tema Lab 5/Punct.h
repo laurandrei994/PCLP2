@@ -15,8 +15,8 @@ public:
 	Punct(double x, double y);
 
 	//getteri
-	int getX() const;
-	int getY() const;
+	double getX() const;
+	double getY() const;
 
 	//setteri
 	void setX(double x);

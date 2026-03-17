@@ -13,12 +13,12 @@ Punct::Punct(double x, double y)
 	this->y = y;
 }
 
-int Punct::getX() const
+double Punct::getX() const
 {
 	return this->x;
 }
 
-int Punct::getY() const
+double Punct::getY() const
 {
 	return this->y;
 }

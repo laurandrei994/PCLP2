@@ -14,7 +14,7 @@ This repository is used for practicing basic Git commands and workflows as part 
 Clone the repository:
 
 ```bash
-git clone https://github.com/laurandrei994/PCLP2.git
+git clone https://github.com/ParvanAndrei/PCLP2.git
 cd PCLP2
 ```
 

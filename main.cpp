@@ -1,10 +1,16 @@
 #include <iostream>
-#include "Date.h"
+#include "dreapta.h"
+#include "punct.h"
+
 using namespace std;
 
 int main()
 {
-    cout << "Hello to POO laboratory on GitHub!" << endl;
-    Date d(35, 14, 1994);
+    Dreapta d(2,1,0,3);
+	d.printDreapta();
+	d.setP1(12.3, 11.4);
+	d.setP2(14.3, 11.7);
+	d.printDreapta();
+
     return 0;
 }

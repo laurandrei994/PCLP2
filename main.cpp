@@ -26,6 +26,19 @@ int main()
 	std::cout << "Partea reala: " << rezultat.getReal() << std::endl;
 	std::cout << "Partea imaginara: " << rezultat.getImaginar() << std::endl;
 
+	std::cout << std::endl << std::endl << "Inmultirea: c * c" << std::endl;
+	rezultat = c * c;
+	std::cout << "Partea reala: " << rezultat.getReal() << std::endl;
+	std::cout << "Partea imaginara: " << rezultat.getImaginar() << std::endl;
+
+	std::cout << std::endl << "Aplicam !: " << std::endl;
+	rezultat = !c;
+	std::cout << "Partea reala: " << rezultat.getReal() << std::endl;
+	std::cout << "Partea imaginara: " << rezultat.getImaginar() << std::endl;
+
+	std::cout << std::endl << "Numarul complex c este: ";
+	std::cout << c;
+
 	return 0;
 }
 

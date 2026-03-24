@@ -25,5 +25,13 @@ public:
 
 	//alte functii
 	Complex operator+ (Complex c);
+
+	//operator ! ca functie membra
+	Complex operator! ();
+
+	//operator >> pentru citire
 	friend std::istream& operator>>(std::istream& in, Complex& c);
+
+	//operator << pentru afisare
+	friend std::ostream& operator<<(std::ostream& out, Complex c);
 };

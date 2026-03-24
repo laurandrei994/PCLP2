@@ -36,5 +36,8 @@ public:
 
 	Complex operator+(Complex c);
 	friend std::istream& operator>>(std::istream& in, Complex& c);
+	Complex operator!();
+	friend std::ostream& operator<<(std::ostream& out, const Complex& c);
+
 
 };

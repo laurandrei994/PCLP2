@@ -2,6 +2,7 @@
 #include "Complex.h"
 
 Complex operator-(Complex c1, Complex c2);
+Complex operator*(Complex c1, Complex c2);
 
 int main()
 {
@@ -26,6 +27,16 @@ int main()
 	std::cout << "Partea reala: " << rezultat.getReal() << std::endl;
 	std::cout << "Partea imaginara: " << rezultat.getImaginar() << std::endl;
 
+	std::cout << std::endl << "Inmultire: c * c: " << std::endl;
+	rezultat = c * c;
+	std::cout << rezultat << std::endl;
+
+	std::cout << std::endl << "Operator ! (schimba semnul imaginarului): " << std::endl;
+	rezultat = !c;
+	std::cout << rezultat << std::endl;
+
+	
+
 	
 
 
@@ -38,4 +49,12 @@ Complex operator-(Complex c1, Complex c2)
 	rezultat.setReal(c1.getReal() - c2.getReal());
 	rezultat.setImaginar(c1.getImaginar() - c2.getImaginar());
 	return rezultat;
+}
+
+Complex operator*(Complex c1, Complex c2)
+{
+    Complex rezultat;
+    rezultat.setReal(c1.getReal() * c2.getReal() - c1.getImaginar() * c2.getImaginar());
+    rezultat.setImaginar(c1.getReal() * c2.getImaginar() + c1.getImaginar() * c2.getReal());
+    return rezultat;
 }

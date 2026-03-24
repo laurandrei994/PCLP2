@@ -46,6 +46,14 @@ Complex Complex::operator+(int i) const
 	return rezultat;
 }
 
+Complex Complex::operator*(Complex c) const
+{
+	Complex rezultat;
+	rezultat.setReal(this->real * c.getReal() - this->imaginar * c.getImaginar());
+	rezultat.setImaginar(this->real * c.getImaginar() + this->imaginar * c.getReal());
+	return rezultat;
+}
+
 std::istream& operator>>(std::istream& in, Complex& c)
 {
 	std::cout << "introduceti partea reala: ";
@@ -53,4 +61,22 @@ std::istream& operator>>(std::istream& in, Complex& c)
 	std::cout << "introduceti partea imaginara: ";
 	in >> c.imaginar;
 	return in;
+}
+
+Complex operator!(Complex c)
+{
+	Complex rezultat;
+	rezultat.setReal(c.getReal());
+	rezultat.setImaginar(-c.getImaginar());
+	return rezultat;
+}
+
+std::ostream& operator<<(std::ostream& out, Complex& c)
+{
+	out << c.real;
+	if(c.imaginar < 0)
+		out << " - " << -c.imaginar << "i";
+	else
+		out <<" + " << c.imaginar << "i";
+	return out;
 }

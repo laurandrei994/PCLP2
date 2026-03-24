@@ -17,6 +17,7 @@ public:
 	friend std::istream& operator>>(std::istream& in, Complex& c);
 	//Complex operator-(Complex c) const;
 	Complex operator*(Complex c) const;
-	Complex operator/(Complex c) const;
-	void printComplex() const;
+	friend Complex operator!(Complex c);
+	
+	friend std::ostream& operator<<(std::ostream& out, Complex& c);
 };

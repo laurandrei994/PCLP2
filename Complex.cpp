@@ -47,6 +47,7 @@ Complex Complex::operator+(int i)
 	return rezultat;
 }
 
+
 std::istream& operator>>(std::istream& in, Complex& c)
 {
 	std::cout << "Introduceti partea reala: ";
@@ -55,4 +56,25 @@ std::istream& operator>>(std::istream& in, Complex& c)
 	in >> c.imaginar;
 
 	return in;
+}
+
+std::ostream& operator<<(std::ostream& out, Complex& c)
+{
+	std::cout << "Partea reala: ";
+	out << c.real;
+	std::cout << std::endl;
+	std::cout << "Partea imaginara: ";
+	out << c.imaginar;
+	std::cout << std::endl;
+
+	return out;
+
+}
+
+Complex operator!(Complex c)
+{
+	Complex rezultat;
+	rezultat.setReal(c.getReal());
+	rezultat.setImaginar(-c.getImaginar());
+	return rezultat;
 }

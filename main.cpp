@@ -2,12 +2,14 @@
 #include "Complex.h"
 
 Complex operator-(Complex c1, Complex c2);
+Complex operator*(Complex c1, Complex c2);
 
 int main()
 {
 	std::cout << "Laborator 6" << std::endl;
 
 	Complex c(5, 5);
+	std::cout << c;
 	std::cout << "Introduceti un numar complex: " << std::endl;
 	std::cin >> c;
 	std::cout << "Partea reala " << c.getReal() << std::endl;
@@ -32,6 +34,15 @@ int main()
 	std::cout << "Partea reala " << rezultat.getReal() << std::endl;
 	std::cout << "Partea imaginara " << rezultat.getImaginar() << std::endl;
 
+	std::cout << std::endl << "inmultirea c*c " << std::endl;
+	rezultat = c * c;
+	std::cout << rezultat;
+
+
+	std::cout << "operatorul unar !";
+	rezultat = !c;
+	std::cout << rezultat << std::endl;
+
 	return 0;
 }
 
@@ -40,5 +51,15 @@ Complex operator-(Complex c1, Complex c2)
 	Complex rezultat;
 	rezultat.setReal(c1.getReal() - c2.getReal());
 	rezultat.setImaginar(c1.getImaginar() - c2.getImaginar());
+	return rezultat;
+}
+
+Complex operator*(Complex c1, Complex c2)
+{
+	Complex rezultat;
+	double parteReala = (c1.getReal() * c2.getReal()) - (c1.getImaginar() - c2.getImaginar());
+	double parteImaginara = (c1.getReal() * c2.getImaginar()) + (c2.getReal() * c1.getImaginar());
+	rezultat.setReal(parteReala);
+	rezultat.setImaginar(parteImaginara);
 	return rezultat;
 }

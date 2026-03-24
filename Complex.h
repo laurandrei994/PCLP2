@@ -29,7 +29,14 @@ class Complex {
 		Complex operator+(Complex c);
 		Complex operator+(int i);
 		//Complex operator-(Complex c);
+		//operator istream
 		friend std::istream& operator>>(std::istream& in, Complex& c);
+		//operator ostream
+		friend std::ostream& operator<<(std::ostream& out, Complex& c);
+
+		//operator unar !
+		friend Complex operator!(Complex c);
+
 
 
 };

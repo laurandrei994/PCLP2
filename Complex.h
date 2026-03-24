@@ -24,8 +24,10 @@ public:
 
 	// Others
 	Complex operator+(Complex c);
-	
+	Complex operator+(double d);
 	friend std::istream& operator>>(std::istream& is, Complex& c);
-
 	friend std::ostream& operator<<(std::ostream& os, const Complex c);
+
+	Complex operator*(Complex c);
+	Complex operator!();
 };

@@ -37,7 +37,7 @@ Complex Complex::operator+(Complex c)
 
 Complex Complex::operator+(double d)
 {
-	return Complex();
+	return Complex(this->real + d, this->imaginar);
 }
 
 std::istream& operator>>(std::istream& is, Complex& c)
@@ -52,7 +52,18 @@ std::istream& operator>>(std::istream& is, Complex& c)
 std::ostream& operator<<(std::ostream& os, const Complex c)
 {
 	double imaginar = c.getImaginar();
-	os << c.getReal() << (imaginar < 0 ? "-" : "+") << imaginar << "i";
+	os << c.getReal() << (imaginar < 0 ? "" : "+") << imaginar << "i";
 	return os;
 }
 
+Complex Complex::operator*(Complex c)
+{
+	double real = this->real * c.getReal() - this->imaginar * c.getImaginar();
+	double imaginar = this->real * c.getImaginar() + this->imaginar * c.getReal();
+	return Complex(real, imaginar);
+}
+
+Complex Complex::operator!()
+{
+	return Complex(this->real, -this->imaginar);
+}

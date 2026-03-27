@@ -1,1 +1,37 @@
 #pragma once
+#include <iostream>
+class Complex
+{
+private:
+	double real;
+	double imaginar;
+
+public:
+	//// Constructor implicit
+	//Complex();
+	//// Constructor explicit
+	//Complex(double real, double imaginar);
+	
+	//// Constructor cu valori implicite
+
+	Complex(double real = 0, double imaginar = 0);
+	// Destructor
+	~Complex();
+	// Getteri
+
+	double getReal() const;
+	double getImaginar() const;
+
+	// Setteri
+
+	void setReal(double real);
+	void setImaginar(double imaginar);
+
+	// alte functii
+
+	Complex operator+(Complex c);
+	Complex operator+(int i);
+	friend std::istream& operator>>(std::istream& in, Complex& c);
+
+
+};
